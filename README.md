@@ -2,7 +2,7 @@
 ![Xcode 9.3](https://img.shields.io/badge/Xcode-9.3%20-0080FF.svg)
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-green.svg)
 
-Example project for an article "Swift, Plist and Two Smoking Scripts".
+Example project for an article [Swift, Plist and Two Smoking Scripts](https://medium.com/rosberryapps/swift-plist-and-two-smoking-scripts-94bb54cbeded).
 
 ## Author
 
