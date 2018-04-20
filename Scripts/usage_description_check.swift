@@ -15,6 +15,12 @@ guard let productSettingsPathRawValue = getenv("PRODUCT_SETTINGS_PATH"),
         exit(1)
 }
 
+// Get script path
+guard let scriptPath = CommandLine.arguments.first else {
+    exit(1)
+}
+let scriptURL = URL(fileURLWithPath: scriptPath)
+
 // Get Swift file URLs
 guard let enumerator = FileManager.default.enumerator(at: projectURL, includingPropertiesForKeys: nil) else {
     exit(1)
@@ -22,6 +28,7 @@ guard let enumerator = FileManager.default.enumerator(at: projectURL, includingP
 var swiftFileURLs = enumerator.allObjects
     .compactMap { $0 as? URL }
     .filter { $0.pathExtension == "swift" }
+    .filter { $0 != scriptURL }
 
 // Get all keys for used patterns
 let patterns = ["EKEventStore": "NSCalendarsUsageDescription"]
